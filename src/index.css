@@ -1,13 +1,63 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --primary: #1e3a6e;
+  --primary-light: #2a4f8f;
+  --secondary: #e53e5e;
+  --secondary-light: #f04d6d;
+  --accent: #dd123a;
+  --bg-light: #f7f7f7;
+  --text-dark: #1a1f36;
+  --text-muted: #6b7280;
+  --shadow-card: 0 2px 12px -2px rgba(30,58,110,0.08);
+  --shadow-elevated: 0 8px 30px -6px rgba(30,58,110,0.12);
+  --gradient-hero: linear-gradient(135deg, #1e3a6e 0%, #162a4f 100%);
+  --gradient-sunset: linear-gradient(135deg, #e53e5e 0%, #d63050 100%);
+  --gradient-ocean: linear-gradient(135deg, #0ea5e9 0%, #1e3a6e 100%);
 }
+body { font-family: "DM Sans", sans-serif; background: var(--bg-light); color: var(--text-dark); }
+h1,h2,h3,h4,h5,h6 { font-family: "Poppins", sans-serif; }
+.font-heading { font-family: "Poppins", sans-serif; }
+.font-body { font-family: "DM Sans", sans-serif; }
+.gradient-hero { background: var(--gradient-hero); }
+.gradient-sunset { background: var(--gradient-sunset); }
+.gradient-ocean { background: var(--gradient-ocean); }
+.shadow-card { box-shadow: var(--shadow-card); }
+.shadow-elevated { box-shadow: var(--shadow-elevated); }
+.shadow-glow { box-shadow: 0 0 20px rgba(229,62,94,0.35); }
+.btn-sunset { background: var(--gradient-sunset); color: #fff; border: none; border-radius: 8px; padding: 10px 24px; font-weight: 600; transition: opacity 0.2s; }
+.btn-sunset:hover { opacity: 0.9; color: #fff; }
+.btn-hero { background: var(--gradient-hero); color: #fff; border: none; border-radius: 8px; padding: 10px 24px; font-weight: 600; transition: opacity 0.2s; }
+.btn-hero:hover { opacity: 0.9; color: #fff; }
+.text-secondary-custom { color: var(--secondary) !important; }
+.text-primary-custom { color: var(--primary) !important; }
+.bg-primary-custom { background-color: var(--primary) !important; }
+.card-travel { border: none; border-radius: 16px; box-shadow: var(--shadow-card); transition: box-shadow 0.3s; overflow: hidden; }
+.card-travel:hover { box-shadow: var(--shadow-elevated); }
+.badge-accent { background: rgba(14,165,233,0.1); color: var(--accent); font-weight: 600; }
+.badge-sunset { background: var(--secondary); color: #fff; }
+.nav-tab-travel { border: none !important; }
+.nav-tab-travel .nav-link { border: none; border-radius: 12px 12px 0 0; color: var(--text-muted); font-weight: 500; padding: 12px 20px; }
+.nav-tab-travel .nav-link.active { background: var(--primary); color: #fff; }
+.avatar-circle { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; }
+.status-confirmed { background: rgba(14,165,233,0.1); color: var(--accent); }
+.status-completed { background: rgba(30,58,110,0.1); color: var(--primary); }
+.status-cancelled { background: rgba(229,62,94,0.1); color: var(--secondary); }
+.status-pending { background: rgba(107,114,128,0.1); color: var(--text-muted); }
+.status-active { background: rgba(14,165,233,0.1); color: var(--accent); }
+.status-approved { background: rgba(14,165,233,0.1); color: var(--accent); }
+.status-blocked { background: rgba(229,62,94,0.1); color: var(--secondary); }
+.status-rejected { background: rgba(229,62,94,0.1); color: var(--secondary); }
+.hero-section { position: relative; padding: 80px 0; overflow: hidden;  min-height: 650px;}
+.hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.search-card { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 16px; }
+.dest-card { position: relative; border-radius: 16px; overflow: hidden; cursor: pointer; }
+.dest-card img { transition: transform 0.5s; }
+.dest-card:hover img { transform: scale(1.05); }
+.dest-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); }
+.deal-card { border-radius: 16px; padding: 24px; color: #fff; }
+.step-circle { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 700; }
+.step-active { background: var(--gradient-sunset); color: #fff; }
+.step-done { background: var(--accent); color: #fff; }
+.step-pending { background: #e5e7eb; color: var(--text-muted); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
